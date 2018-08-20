@@ -1,0 +1,100 @@
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+::selection {
+  background: Salmon; /* WebKit/Blink Browsers */
+}
+
+html {
+  box-sizing: border-box;
+}
+
+nav{
+	background-color: MediumSeaGreen;
+	color: floralwhite;
+}
+
+body{
+    background-image: url("./img/hojas.jpg");
+    background-attachment: fixed;
+
+}
+
+p, h1{
+	text-align: center;
+}
+
+
+h1{
+	margin: 0 auto;
+	font-size: 60px;
+}
+
+footer{
+	background-color: black;
+}
+.banner{
+	margin-top: 40px;
+    padding:  50px;
+	
+}
+
+.twitter-follow-button,.photo{
+	border-radius: 50%;
+	display: block;
+    margin: 0 auto;
+}
+
+.motto{
+	background-color: MediumSeaGreen ;
+	text-align: center;
+	font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    color: floralwhite;
+    padding: 10px;
+}
+
+.descripcion{
+	font-size: 40px;
+	background-color: antiquewhite;
+    font-family: 'Magra', sans-serif;
+    font-size: 18px;
+    padding: 20px;
+    margin: 20px;
+    opacity: 0.9;
+    border-radius: 25px;
+}
+
+.background{
+	padding-top: 20px; 
+    background-color: antiquewhite;
+    font-family: 'Magra', sans-serif;
+    font-size: 18px;
+}
+
+.galeria{
+	margin-top: 20px;
+}
+
+#nombre{
+	margin-top: 0px;
+}
+
+#noMargin{
+	margin-bottom: 0px;
+}
+
+
+/*carrusel*/
+
+.carousel-caption h2, .carousel-caption p{
+	background-color: black;
+	opacity: 0.75; 
+	border-radius: 5px;
+}
+
+.carousel-caption p{
+	font-size: 16px;
+}
