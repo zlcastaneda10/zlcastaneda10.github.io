@@ -21,6 +21,7 @@
 
 </head>
 <body>
+	<!--
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -34,7 +35,18 @@
 			</ul>
 		</div>
 	</nav>
-<br><br>
+-->
+
+	<header class="container">
+	  <div class="row">
+	     <h1 class="col-sm-4">Skillfair</h1> <nav class="col-sm-8 text-right">
+	   <p>newest</p>
+	      <p>catalogue</p>
+	      <p>contact</p>
+	    </nav>
+	    </div>
+	</header>
+
 	<div class="motto">
 		Sparking joy, one line at a time 😊
 	</div>
@@ -43,10 +55,10 @@
 	<div class="banner">
 		<img src="./img/mifoto.jpg" class="photo">
 		<div class="container">
-		<header class="descripcion">
-            <p>Hello my name is </p>
-            <h1 id="nombre">Zulma Lorena Castañeda Hidalgo</h1>
-            <p class="intro">I am currently an undergraduate student pursuing a major in <strong>Systems and Computing Engineering</strong> with complementary studies in Visual Computing at <strong>Universidad de los Andes</strong> in Bogotá, Colombia.<br> Right now, I am in my 8th semester. I’m interested in design, UI/UX and visualization but also in data base management and data mining. I really enjoy working in interdisciplinary teams and learning from everyone! 
+		<header class="descripcion text-center">
+            <p>Hello my name is </p><br>
+            <h1 id="nombre">Zulma Lorena Castañeda Hidalgo</h1><br>
+            <p class="intro">I am currently an undergraduate student pursuing a major in <strong>Systems and Computing Engineering</strong> with complementary studies in Visual Computing at <strong>Universidad de los Andes</strong> in Bogotá, Colombia.<br> Right now, I am in my 8th semester. I’m interested in <strong>design</strong>, <strong>UI/UX</strong> and <strong>visualization</strong> but also in data base management and data mining.<br> I really enjoy working in interdisciplinary teams and <strong>learning</strong> from everyone! 
 
             <br>Espero algun dia hacer algo que impresione a John Guerra </p>
                 <br>
@@ -61,23 +73,29 @@
 
 	<div class="motto">Where have I studied</div>
 <!--container-->
-	<div class="background ">
+	<div class="background estudios">
 		<div class="container">
 	    	<div class="row">
-	    		<div class="col--4">
+	    		<div class="col-sm-4">
 	    			<div class="panel panel-default">
+	    				<h3>Gimnasio los Monjes</h3>
+	    				<img src="./img/Monjes.jpg" style="width: 134px;">
 	    				<p> I am currently an undergraduate student at Universidad de los Andes in Bogotá, Colombia pursuing a major in Systems & Computing Engineering. I have a passion for creating quality software that help's make people's life easier. Constantly trying to learn new things and improve myself. Feel free to contact me </p>
 	    			</div>	
 	    		</div>
 
 	    		<div class="col-sm-4">
 	    			<div class="panel panel-default">
+	    				<h3>Sena-Cenigraf</h3>
+	    				<img src="./img/sena.png" style="width: 180px;">
 	    				<p> I am currently an undergraduate student at Universidad de los Andes in Bogotá, Colombia pursuing a major in Systems & Computing Engineering. I have a passion for creating quality software that help's make people's life easier. Constantly trying to learn new things and improve myself. Feel free to contact me </p>
 	    			</div>	
 	    		</div>
 
 	    		<div class="col-sm-4">
 	    			<div class="panel panel-default">
+	    				<h3>Universidad de los Andes</h3>
+						<img src="./img/andes.png" style="width: 140px;">
 	    				<p> I am currently an undergraduate student at Universidad de los Andes in Bogotá, Colombia pursuing a major in Systems & Computing Engineering. I have a passion for creating quality software that help's make people's life easier. Constantly trying to learn new things and improve myself. Feel free to contact me </p>
 	    			</div>	
 	    		</div>
@@ -89,14 +107,14 @@
 
     <div class="motto">You can talk to me in </div>
 <!--container-->
-	<div class="background ">
+	<div class="background text-center">
 		<div class="container">
 	    	<div class="row">
 	    		<div class="col-sm-4 ">
 	    			<div class="panel panel-default">
 	    				<h3>Spanish</h3>
 	    				<img src="./img/flag-for-spain.png">
-	    				<p> My native tonge. In Colombia <strong>SE HABLA ESPAÑOL</strong></p>
+	    				<p> My native tonge.<br> In Colombia <strong>SE HABLA ESPAÑOL</strong></p>
 	    			</div>	
 	    		</div>
 
@@ -147,7 +165,7 @@
      <div class="motto">Things I ❤️ </div>  
 
 
- 	<section class="galeria">
+ 	<section class="galeria jumbotron">
 
 			<div class="container">
 			
@@ -199,7 +217,7 @@
 			        <img src="./img/4.jpg" alt="Videojuegos" style="width:100%;">
 			        <div class="carousel-caption">
 			          <h2>Like what you see?</h2>
-			          <p>You can check out more <a href="https://www.deviantart.com/zapphiere">Here</a></p>
+			          <p>You can check out more  <a class="btn btn-primary" href="https://www.deviantart.com/zapphiere" role="button">Here</a></p>
 			        </div>
 			      </div>
 			    </div>
@@ -219,19 +237,25 @@
 
 
 
-	<footer>
-		<h2>Contacto</h2>
-		<p> Frase chevere :D </p>
-		<div class="network-block">
-			<h4>Encuentrame en:</h4>
-			<ul class="inline-list">
-				<li>Twitter</li>
-				<li>facebook</li>
-                <li>DeviantArt</li>
-                <li></li>
-			</ul>
-		</div>
-	</footer>
+	 <footer class="container">
+    <div class="row">
+      <p class="col-sm-4">&copy; 2016 Skillfair</p>
+      <ul class="col-sm-8">
+        <li class="col-sm-1">
+          <img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/twitter.svg">
+        </li>
+        <li class="col-sm-1">
+          <img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg">
+        </li>
+        <li class="col-sm-1">
+          <img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/instagram.svg">
+        </li>
+        <li class="col-sm-1">
+          <img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/medium.svg">
+        </li>
+      </ul>
+    </div>
+  </footer>
 
 </body>
 </html>
