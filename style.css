@@ -42,6 +42,10 @@ footer{
     opacity: 0.9;
 }
 
+.margen{
+	margin-top: 50px;
+}
+
 .descripcion{
 	font-size: 40px;
 	background-color: antiquewhite;
@@ -147,3 +151,20 @@ footer li img {
   width: 32px;
   height: 32px;
 }
+
+ body {
+    position: relative; 
+  }
+  .affix {
+    top:0;
+    width: 100%;
+    z-index: 9999 !important;
+  }
+  .navbar {
+    margin-bottom: 0px;
+  }
+
+  .affix ~ .container-fluid {
+    position: relative;
+    top: 50px;
+  }

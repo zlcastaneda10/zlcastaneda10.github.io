@@ -1,38 +1,18 @@
-/* Demo Scripts for Bootstrap Carousel and Animate.css article
-* on SitePoint by Maria Antonietta Perna
-*/
-(function($) {
-  //Function to animate slider captions
-  function doAnimations(elems) {
-    //Cache the animationend event in a variable
-    var animEndEv = "webkitAnimationEnd animationend";
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("#nav ul li a[href^='#']").on('click', function(event) {
+    if (this.hash !== "") {
+      var target = this.hash;
 
-    elems.each(function() {
-      var $this = $(this),
-        $animationType = $this.data("animation");
-      $this.addClass($animationType).one(animEndEv, function() {
-        $this.removeClass($animationType);
-      });
-    });
-  }
+  event.preventDefault();
 
-  //Variables on page load
-  var $myCarousel = $("#carouselExampleIndicators"),
-    $firstAnimatingElems = $myCarousel
-      .find(".carousel-item:first")
-      .find("[data-animation ^= 'animated']");
+  var navOffset = $('#nav').height();
 
-  //Initialize carousel
-  $myCarousel.carousel();
-
-  //Animate captions in first slide on page load
-  doAnimations($firstAnimatingElems);
-
-  //Other slides to be animated on carousel slide event
-  $myCarousel.on("slide.bs.carousel", function(e) {
-    var $animatingElems = $(e.relatedTarget).find(
-      "[data-animation ^= 'animated']"
-    );
-    doAnimations($animatingElems);
+  return $('html, body').animate({
+    scrollTop: $(this.hash).offset().top - navOffset +1
+  }, 300, function() {
+    return window.history.pushState(null, null, target);
   });
-})(jQuery);
+    } // End if
+  });
+});

@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Zulma Castañeda</title>
+	
      <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Magra|Pacifico" rel="stylesheet">
 	<!-- Latest compiled and minified CSS -->
@@ -10,44 +11,44 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	<script src="myscripts.js"></script>
+
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
 
 </head>
-<body>
-	<!--
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Zulma Castañeda</a>
-			</div>
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Gustos</a></li>
-      			<li><a href="#">Habilidades</a></li>
-      			<li><a href="#">Proyectos</a></li>
-			</ul>
-		</div>
-	</nav>
--->
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+	<nav id="nav" class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="197">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+        <a class="navbar-brand" href="#">Zulma Castañeda</a>
+      </div>
+      <div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="#studies">Studies</a></li>
+            <li><a href="#languages">Languages</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#heart">Hobbies ❤</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-	<header class="container">
-	  <div class="row">
-	     <h1 class="col-sm-4">Skillfair</h1> <nav class="col-sm-8 text-right">
-	   <p>newest</p>
-	      <p>catalogue</p>
-	      <p>contact</p>
-	    </nav>
-	    </div>
-	</header>
-
-	<div class="motto">
+	<div class="motto margen">
 		Sparking joy, one line at a time 😊
 	</div>
 
@@ -71,7 +72,7 @@
 	
 	
 
-	<div class="motto">I have studied in</div>
+	<div class="motto" id="studies">I have studied in</div>
 <!--container-->
 	<div class="background estudios text-center">
 		<div class="container">
@@ -79,7 +80,7 @@
 	    		<div class="col-sm-4">
 	    			<div class="panel panel-default">
 	    				<h3>Gimnasio los Monjes</h3>
-	    				<img src="./img/Monjes.jpg" style="width: 134px;">
+	    				<img src="./img/monjes.jpg" style="width: 134px;">
 	    				<p> I graduated in 2011. I got the best <strong>ICFES</strong> score of my class and got awarded Integral Student thanks to my academic performance. I also got a <strong> technical degree </strong> in accounting. </p>
 	    			</div>	
 	    		</div>
@@ -105,7 +106,7 @@
 	    </div>
     </div>
 
-    <div class="motto">You can talk to me in </div>
+    <div class="motto" id="languages">You can talk to me in </div>
 <!--container-->
 	<div class="background text-center">
 		<div class="container">
@@ -139,7 +140,7 @@
 	    </div>
     </div>
 
-    <div class="motto">Things i'm good at</div>
+    <div class="motto" id="skills">Things i'm good at</div>
 <!--container-->
 	<div class="background ">
 		<div class="container">
@@ -158,7 +159,7 @@
 	</div>
 
 
-	<div class="motto">My Projects</div>
+	<div class="motto" id="projects">My Projects</div>
 <!--container-->
 	<div class="background text-center">
 		<div class="container">
@@ -197,10 +198,10 @@
 
     
 
-     <div class="motto">Things I ❤️ </div>  
+     <div class="motto" id="heart">Things I ❤️ </div>  
 
 
- 	<section class="galeria jumbotron">
+ 	<section class="galeria " >
 
 			<div class="container">
 			
@@ -272,7 +273,7 @@
 
 
 
-	 <footer class="container">
+	 <footer class="">
     <div class="row">
       <p class="col-sm-4">&copy; 2016 Skillfair</p>
       <ul class="col-sm-8">
