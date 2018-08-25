@@ -10,7 +10,7 @@ $(document).ready(function(){
 
   return $('html, body').animate({
     scrollTop: $(this.hash).offset().top - navOffset +1
-  }, 300, function() {
+  }, 1000, function() {
     return window.history.pushState(null, null, target);
   });
     } // End if
