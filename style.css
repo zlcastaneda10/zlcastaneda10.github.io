@@ -33,7 +33,7 @@ nav{
 }
 
 body{
-    background-image: url("./img/hojas.jpg");
+    background-image: url("./img/pattern.jpg");
     background-attachment: fixed;
     overflow-x:hidden;
 }
@@ -99,7 +99,7 @@ footer{
 }
 
 .galeria {
-	 background-image: url("./img/pattern.jpg");
+	 background-image: url("./img/hojas.jpg");
 	 background-attachment: fixed;
 	 padding: 20px 0px;
 }
