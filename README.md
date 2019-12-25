@@ -35,10 +35,17 @@ To see the result you just need to click [here](https://zlcastaneda10.github.io/
 Zulma Lorena Castañeda Hidalgo 
 
 ## Screenshot
+<<<<<<< HEAD
 ![screenshot](https://i.imgur.com/RJjury9.png)
+=======
+![screenshot](https://i.imgur.com/WgHYyLz.png)
+>>>>>>> New version
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This repository has the standard MIT license. You can find it [here.](https://opensource.org/licenses/MIT)
+<<<<<<< HEAD
 
+=======
+>>>>>>> New version
