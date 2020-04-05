@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zampoña</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+
+</style>
+<body>
+    <div class="keys">
+        <div data-key="65" class="key"><span><kbd>A</kbd><span class="sound">DO</span></span></div>
+        <div data-key="83" class="key"><span><kbd>S</kbd><span class="sound">RE</span></span></div>
+        <div data-key="68" class="key"><span><kbd>D</kbd><span class="sound">MI</span></span></div>
+        <div data-key="70" class="key"><span><kbd>F</kbd><span class="sound">FA</span></span></div>
+        <div data-key="71" class="key"><span><kbd>G</kbd><span class="sound">SOL</span</span></div>
+        <div data-key="72" class="key"><span><kbd>H</kbd><span class="sound">LA</span></span></div>
+        <div data-key="74" class="key"><span><kbd>J</kbd><span class="sound">SI</span></span></div>
+        <!-- <div data-key="75" class="key"><span><kbd>K</kbd><span class="sound"></span></span></div> -->
+        <!-- <!-- <div data-key="76" class="key"><span><kbd>L</kbd><span class="sound"></span></span></div> --> -->
+        <img src="img/zampona.png" alt="zampona" class="ilustration">
+    </div>
+
+    <audio src="sounds/do.mp3" data-key="65"></audio>
+    <audio src="sounds/re.mp3" data-key="83"></audio>
+    <audio src="sounds/mi.mp3" data-key="68"></audio>
+    <audio src="sounds/fa.mp3" data-key="70"></audio>
+    <audio src="sounds/sol.mp3" data-key="71"></audio>
+    <audio src="sounds/la.mp3" data-key="72"></audio>
+    <audio src="sounds/si.mp3" data-key="74"></audio>
+    <audio src="sounds/clap.wav" data-key="75"></audio>
+    <audio src="sounds/clap.wav" data-key="76"></audio>
+</body>
+<script>
+
+    function playSound(e){
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+        if(!audio && !audio.paused){return} //Stops the function
+        audio.loop = true;
+        audio.play();
+        key.classList.add('playing')
+    }
+
+    function stopSound(e){
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+        if(!audio){return}
+        audio.pause();
+        audio.currentTime =0;
+        key.classList.remove('playing')
+    }
+
+    window.addEventListener('keydown', playSound);
+    window.addEventListener('keyup', stopSound);
+</script>
+</html>
