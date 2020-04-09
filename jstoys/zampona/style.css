@@ -61,3 +61,14 @@ html {
       z-index: -1;
       height: 100vh;
   }
+
+  .hide{
+    color: rgba(0,0,0,0);
+  }
+
+  .topleft {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 3em;
+  }
