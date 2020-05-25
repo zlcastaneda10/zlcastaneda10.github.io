@@ -12,17 +12,23 @@
 
 </style>
 <body>
-    <div class="keys">
-        <div data-key="65" class="key"><span><kbd>A</kbd><span class="sound">DO</span></span></div>
-        <div data-key="83" class="key"><span><kbd>S</kbd><span class="sound">RE</span></span></div>
-        <div data-key="68" class="key"><span><kbd>D</kbd><span class="sound">MI</span></span></div>
-        <div data-key="70" class="key"><span><kbd>F</kbd><span class="sound">FA</span></span></div>
-        <div data-key="71" class="key"><span><kbd>G</kbd><span class="sound">SOL</span</span></div>
-        <div data-key="72" class="key"><span><kbd>H</kbd><span class="sound">LA</span></span></div>
-        <div data-key="74" class="key"><span><kbd>J</kbd><span class="sound">SI</span></span></div>
-        <img src="img/zampona.png" data-image="kid" alt="zampona" class="ilustration">
+    <div class="container">
+        <div class="ilustration">
+            <img src="img/zampona.png" data-image="kid" alt="zampona" class="ilustration">
+        </div>
+
+            <div class="keys">
+                <div data-key="65" class="key"><span><kbd>A</kbd><span class="sound">DO</span></span></div>
+                <div data-key="83" class="key"><span><kbd>S</kbd><span class="sound">RE</span></span></div>
+                <div data-key="68" class="key"><span><kbd>D</kbd><span class="sound">MI</span></span></div>
+                <div data-key="70" class="key"><span><kbd>F</kbd><span class="sound">FA</span></span></div>
+                <div data-key="71" class="key"><span><kbd>G</kbd><span class="sound">SOL</span</span></div>
+                <div data-key="72" class="key"><span><kbd>H</kbd><span class="sound">LA</span></span></div>
+                <div data-key="74" class="key"><span><kbd>J</kbd><span class="sound">SI</span></span></div>
+            </div>
+            
+            <div class="notes"></div>  
     </div>
-    <h1 class="topleft hide">Try LA FA MI RE RE</h1>
 
     <audio src="sounds/do.mp3" data-key="65"></audio>
     <audio src="sounds/re.mp3" data-key="83"></audio>
@@ -34,60 +40,83 @@
     <audio src="sounds/tusa.mp3" data-song="tusa"></audio>
 </body>
 <script>
-
+    
+    const kid = document.querySelector('.ilustration[data-image="kid"]');
+    const tusa = document.querySelector('audio[data-song="tusa"');
+    const pressed = [];
+    const song = 'hfdss';
+    const text = document.querySelector('.notes');
+    
     function playSound(e){
         const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
         const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-        const kid = document.querySelector('.ilustration[data-image="kid"]');
 
-        if(!audio && !audio.paused){return} //Stops the function
+        if(!audio){return} //Stops the function
+
         audio.loop = true;
         audio.play();
         key.classList.add('playing');
         kid.src='img/zampona2.png';
-
     }
 
     function stopSound(e){
         const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
         const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-        const kid = document.querySelector('.ilustration[data-image="kid"]');
 
         if(!audio){return}
+
         audio.pause();
-        audio.currentTime =0;
+        audio.currentTime = 0;
         key.classList.remove('playing');
         kid.src='img/zampona.png';
+    }
+    
+    function playSong(e){
+        pressed.push(e.key);
+        pressed.splice(-song.length-1, pressed.length - song.length);
+        
+        let chord = pressed.join('');
+        console.log();
+        
+        switch (chord) {
+            case 'hfdss':
+                playSection(6)
+                text.innerHTML = 'RE MI FA LA LA'
+                break;
+            case 'sdfhh':
+                playSection(10.5)
+                text.innerHTML = 'LA FA MI FA MI '
+                break;
+            case 'hfdfd':
+                playSection(13,false)
+                text.innerHTML = 'Felicidades, acabas de tocar TUSA <br> <img src="./img/stop.png" alt="stop icon" onclick ="stopSong()">'
+            default:
+                break;
+        }
+
+    }
+
+    function playSection(currentTime, pause=true){
+        tusa.currentTime=currentTime;
+        tusa.play();
+        if(pause)
+            setTimeout(()=>{tusa.pause()},2500);
+    }
+
+    function stopSong() {
+        tusa.pause();
+        tusa.currentTime = 0;
+        text.innerHTML='Prueba LA FA MI RE RE';
+        
     }
 
     window.addEventListener('keydown', playSound);
     window.addEventListener('keyup', stopSound);
-
-    const pressed = [];
-    const song = "hfdss";
-    window.addEventListener('keyup', (e)=>{
-        const tusa = document.querySelector('audio[data-song="tusa"');
-        pressed.push(e.key);
-        pressed.splice(-song.length-1, pressed.length - song.length);
-        if(pressed.join('').includes(song)){
-            tusa.currentTime=3;
-            tusa.play();
-            console.log(tusa.currentTime);
-            setInterval(function(){
-                //21.5
-                if(tusa.currentTime>=5){
-                tusa.pause();
-                }
-            },1000);
-            
-        }
-        console.log(pressed);
-    });
+    window.addEventListener('keyup',playSong)
 
     setTimeout(function(){ 
-       const text = document.querySelector('.hide');
-       text.classList.remove('hide');
-        }, 10000);
+       text.innerHTML='Prueba LA FA MI RE RE';
+    }, 3000);
 
 </script>
 </html>
