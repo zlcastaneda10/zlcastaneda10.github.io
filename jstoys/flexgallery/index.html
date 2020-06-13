@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Fanarts</title>
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="panels">
+        <div class="panel panel1">
+            <p>España</p>
+            <p>F</p>
+            <p>Hetalia</p>
+        </div>
+        <div class="panel panel2">
+            <p>Spike Spiegel</p>
+            <p>A</p>
+            <p>Cowboy Bebop</p>
+        </div>
+        <div class="panel panel3">
+            <p>Simon</p>
+            <p>N</p>
+            <p>TTGL</p>
+        </div>
+        <div class="panel panel4">
+            <p>Heiwajima Shizuo</p>
+            <p>A</p>
+            <p>Durarara!!</p>
+        </div>
+        <div class="panel panel5">
+            <p>Raimundo</p>
+            <p>R</p>
+            <p>Duelo Xiaolin</p>
+        </div>
+        <div class="panel panel6">
+            <p>Murdoc Nicals</p>
+            <p>T</p>
+            <p>Gorillaz</p>
+        </div>
+    </div>
+
+    <script>
+        const panels = document.querySelectorAll('.panel');
+        
+        function toggleOpen(){
+            this.classList.toggle('open');
+        }
+
+        function toggleActive(e){
+            if(e.propertyName.includes('flex')){
+                this.classList.toggle('open-active');
+            }
+        }
+
+        panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+        panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+
+    </script>
+</body>
+</html>

@@ -18,7 +18,7 @@
         </div>
 
             <div class="keys">
-                <div data-key="65" class="key"><span><kbd>A</kbd><span class="sound">DO</span></span></div>
+                <div data-key="65" class="key" onclick="hola(this)"><span><kbd>A</kbd><span class="sound">DO</span></span></div>
                 <div data-key="83" class="key"><span><kbd>S</kbd><span class="sound">RE</span></span></div>
                 <div data-key="68" class="key"><span><kbd>D</kbd><span class="sound">MI</span></span></div>
                 <div data-key="70" class="key"><span><kbd>F</kbd><span class="sound">FA</span></span></div>
@@ -110,9 +110,36 @@
         
     }
 
+    function hola(e){
+        console.log(e);
+        // this.playSound(e.getAttribute('data-key'))
+
+    }
+
+    var mousedownID = -1;
+    function mousedown(event) {
+    if(mousedownID==-1)  //Prevent multimple loops!
+     mousedownID = setInterval(whilemousedown, 100 /*execute every 100ms*/);
+    }
+    function mouseup(event) {
+    if(mousedownID!=-1) {  //Only stop if exists
+        clearInterval(mousedownID);
+        mousedownID=-1;
+    }
+
+    }
+    function whilemousedown() {
+    /*here put your code*/
+    console.log("holi");
+    }
+
     window.addEventListener('keydown', playSound);
     window.addEventListener('keyup', stopSound);
-    window.addEventListener('keyup',playSong)
+    window.addEventListener('keyup',playSong);
+    window.addEventListener('mousedown',mousedown);
+    window.addEventListener('mouseup',mouseup);
+    document.addEventListener("mouseout", mouseup);
+
 
     setTimeout(function(){ 
        text.innerHTML='Prueba LA FA MI RE RE';
