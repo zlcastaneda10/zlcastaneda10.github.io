@@ -12,7 +12,9 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	position: relative;
 	font-size: 1rem;
-	background: #e7e0dd;
+    background-image: -moz-linear-gradient(0deg, #d4fc79 0%, #96e6a1 100%);
+    background-image: -webkit-linear-gradient(0deg, #d4fc79 0%, #96e6a1 100%);
+    background-image: -ms-linear-gradient(0deg, #d4fc79 0%, #96e6a1 100%); 
 }
 
 .gallery-container {
