@@ -281,6 +281,43 @@ h6, h5, h4, h3{
 }
 
 /* Projects Area */
+.project{
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.project-details{
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+figure{
+    margin: 0;
+}
+.project-imageContainer {
+    width: 50%;
+    text-align: right;
+}
+  
+  .project-imageContainer img {
+    max-width: 95%;
+  }
+
+  .project-course,
+.project-date {
+  margin: 10px 0;
+}
+
+.panels{
+    display: flex;
+    flex-wrap: wrap;;
+}
 
 .panel{
     background-color: #fff;
@@ -301,7 +338,6 @@ h6, h5, h4, h3{
         font-family: $os;
         font-size: 26px;
         font-weight: bold;
-        margin-bottom: 18px;
         text-transform: uppercase; 
     }
 
@@ -314,10 +350,7 @@ h6, h5, h4, h3{
         font-size: 16px;
         padding: 10px;
         margin-top: 20px;
-        
-        &:hover{
-            text-decoration: none;
-        }
+        text-decoration: none;
     }
 
 
@@ -453,6 +486,38 @@ $counter: 2.25em;
     .welcome_text{
         width: 80%
     }
+
+    .project{
+        display: block;
+      }
+      .project-imageContainer{
+        width: auto;
+        text-align: center;
+      }
+      .project-details{
+        width: auto;
+        font-size: 16px;
+      }
+      .project-course, .project-date, .project-url{
+        margin: .4em 0;
+    
+      }
+      .project-title{
+        font-size: 1.5em;
+        margin-bottom: .3em;
+      }
+      .project-url{
+        font-size: 1em;
+      }
+      .project-course{
+        font-size:.7em;
+      }
+      .project-date{
+        font-size: 1em;
+      }
+      .project-description{
+        font-size: .8em;
+      }
 }
 
 @media screen and (max-width: 480px){
