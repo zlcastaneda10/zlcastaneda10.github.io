@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Simon Dice</title>
+  <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+      margin: 0;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .gameboard {
+      height: 100vh;
+      width: 100vh;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto;
+      max-height: 60vh;
+      max-width: 60vh;
+      border: 10px solid #ffffff;
+    }
+
+    .color {
+      width: 50%;
+      height: 50%;
+      display: inline-block;
+    }
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: left;
+    }
+
+    .green {
+      background: #0B9444;
+    }
+
+    .green.light {
+      background: #63BA88;
+    }
+
+    .red {
+      background: #ED1C24;
+    }
+
+    .red.light {
+      background: #F36E73;
+    }
+
+    .yellow {
+      background: #F5EE30;
+    }
+
+    .yellow.light {
+      background: #F8F47B;
+    }
+
+    .blue {
+      background: #25AAE1;
+    }
+
+    .blue.light {
+      background: #74C8EB;
+    }
+
+    .btn-start {
+      width: 200px;
+      height: 200px;
+      background: #000000;
+      border-radius: 50%;
+      border: 10px solid #ffffff;
+      color: #ffffff;
+      font-size: 2.5rem;
+      position: absolute;
+      top: calc(50% - 100px);
+      left: calc(50% - 100px);
+    }
+
+    .btn-start:hover{
+      background: #181818;
+    }
+
+    .hide {
+      display: none;
+    }
+  </style>
+
+<body>
+  <div class="gameboard">
+    <div id="btnGreen" class="color green left" data-color="0"></div>
+    <div id="btnRed" class="color red right" data-color="1"></div>
+    <div id="btnBlue" class="color yellow left" data-color="2"></div>
+    <div id="btnYellow" class="color blue right" data-color="3"></div>
+    <button id="btnStart" class="btn-start" onclick="startGame()">Simon</button>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script>
+
+    const LAST_LEVEL = 10;
+    const btnStart = document.getElementById('btnStart');
+    const btnGreen = document.getElementById('btnGreen');
+    const btnRed = document.getElementById('btnRed');
+    const btnBlue = document.getElementById('btnBlue');
+    const btnYellow = document.getElementById('btnYellow');
+
+    class Game {
+      constructor() {
+        this.initialice();
+        this.generateSequence();
+        setTimeout(() => {
+          this.nextLevel();
+        }, 500);
+      }
+      initialice() {
+        this.selectColor = this.selectColor.bind(this);
+        this.nextLevel = this.nextLevel.bind(this);
+        this.initialice = this.initialice.bind(this);
+        this.toggleStart();
+        this.level = 1;
+        this.colors = [
+          btnGreen,
+          btnRed,
+          btnBlue,
+          btnYellow
+        ]
+      }
+      toggleStart(){
+        btnStart.classList.contains('hide')?btnStart.classList.remove('hide'):btnStart.classList.add('hide');
+      }
+      generateSequence() {
+        this.sequence = new Array(LAST_LEVEL)
+          .fill(0)
+          .map(e => Math.floor(Math.random() * 4));
+      }
+      nextLevel() {
+        this.sublevel = 0;
+        this.showSequence();
+        this.addOnClick();
+      }
+
+      showSequence() {
+        for (let i = 0; i < this.level; i++) {
+          const color = this.sequence[i];
+          setTimeout(() => this.showColor(color), 1000 * i);
+        }
+      }
+
+      showColor(color) {
+        this.colors[color].classList.add('light');
+        setTimeout(() => {
+          this.hideColor(color)
+        }, 350);
+      }
+
+      hideColor(color) {
+        this.colors[color].classList.remove('light');
+      }
+
+      addOnClick() {
+        this.colors.forEach(el => {
+          addEventListener('click', this.selectColor);
+        });
+      }
+
+      deleteOnclick() {
+        this.colors.forEach(el => {
+          removeEventListener('click', this.selectColor);
+        });
+      }
+
+      selectColor(ev) {
+        const colorNumber = ev.target.dataset.color;
+          
+        this.showColor(colorNumber);
+        if (colorNumber == this.sequence[this.sublevel]) {
+          this.sublevel++;
+          
+          if (this.sublevel === this.level) {
+            this.level++;
+            this.deleteOnclick();
+            if(this.level === (LAST_LEVEL + 1) ){
+              this.wonGame();          
+            } else{
+              setTimeout(this.nextLevel, 1500) 
+            }
+          }
+        } else {
+          this.lostGame();
+        }
+      }
+      wonGame(){
+        swal ('Congrats!', 'You won the game!', 'success')
+        .then(this.initialice)
+      }
+
+      lostGame(){
+        swal ('Sorry 😢 ', 'You lost THE GAME!', 'error')
+        .then(() => {
+          this.deleteOnclick()
+           this.initialice()
+        }
+        )
+      }
+
+
+    }
+    function startGame() {
+      window.game = new Game();
+    }
+
+
+  </script>
+
+
+  <div at-magnifier-wrapper="">
+    <div class="at-theme-light">
+      <div class="at-base notranslate" translate="no">
+        <div class="Z1-AJ" style="top: 0px; left: 0px;"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

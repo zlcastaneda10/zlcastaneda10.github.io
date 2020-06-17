@@ -39,12 +39,12 @@ body{
     flex-direction: column;
 }
 
-.panel1 { background-image: url('./img/Antonio.jpg'); }
-.panel2 { background-image:url('./img/Spike.jpg'); }
-.panel3 { background-image:url('./img/Simon.jpg'); }
-.panel4 { background-image:url('./img/Shizuo.jpg'); }
-.panel5 { background-image:url('./img/Raimundo.jpg'); }
-.panel6 { background-image:url('./img/Murdoc.jpg'); }
+.panel1 { background-image: url('https://i.imgur.com/66rYLgw.jpg'); }
+.panel2 { background-image:url('https://i.imgur.com/wUqMZEp.jpg'); }
+.panel3 { background-image:url('https://i.imgur.com/GIrquQl.jpg'); }
+.panel4 { background-image:url('https://i.imgur.com/detfH5M.jpg'); }
+.panel5 { background-image:url('https://i.imgur.com/iVgDVni.jpg'); }
+.panel6 { background-image:url('https://i.imgur.com/IzzjIjx.jpg '); }
 
 
 /*Flex items*/
