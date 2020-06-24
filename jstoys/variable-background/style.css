@@ -1,13 +1,14 @@
 :root{
     --base: #ff5900;
     --spacing: 10px;
-    --blur: 10px;
+    --blur: 1px;
 }
 
 img{
     padding: var(--spacing);
     background: var(--base);
     filter: blur(var(--blur));
+    height: 95vh;
 }
 
 .hl{
@@ -29,4 +30,13 @@ body{
 
 input{
     width: 100px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+}
+
+.left{
+    padding: 0 40px;
 }

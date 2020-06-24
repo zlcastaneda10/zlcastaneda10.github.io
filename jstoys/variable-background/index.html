@@ -7,20 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Update CSS Variables with <span class="hl">JS</span></h2>
+    <div class="container">
+        <div class="left">
 
-    <div class="controls">
-        <label for="spacing">Spacing:</label>
-        <input type="range" id="spacing" name="spacing" min="10" max="200" value="10" data-sizing="px">
-
-        <label for="blur">Blur</label>
-        <input type="range" id="blur" name="blur" min="0" max="25" value="10" data-sizing="px">
-
-        <label for="base">Base Color</label>
-        <input type="color" name= "base" value="#ff5900">
+            <h2>Update CSS Variables with <span class="hl">JS</span></h2>
+    
+            <div class="controls">
+                <label for="spacing">Spacing:</label>
+                <input type="range" id="spacing" name="spacing" min="10" max="200" value="10" data-sizing="px">
+        
+                <label for="blur">Blur</label>
+                <input type="range" id="blur" name="blur" min="0" max="25" value="10" data-sizing="px">
+        
+                <label for="base">Base Color</label>
+                <input type="color" name= "base" value="#ff5900">
+            </div>
+        </div>
+    
+        <img src="change-background.png" alt="ilustration">
     </div>
-
-    <img src="change-background.png" alt="ilustration">
+    
 
     <script>
         const inputs = document.querySelectorAll('.controls input');
